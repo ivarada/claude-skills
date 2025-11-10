@@ -115,45 +115,19 @@ claude-skills/
 ├── LICENSE
 │
 ├── taxonomy-svg/
-│   ├── README.md
-│   ├── SKILL.md
-│   ├── CHANGELOG.md
-│   └── scripts/
-│       └── generate_svg.py
+│   ├── taxonomy-svg-CHANGELOG.md
+│   ├── taxonomy-svg.skill
+│   ├── taxonomy-svg-README.md
 │
 ├── crossref-lookup/
 │   ├── crossref-lookup-README.md
-│   ├── SKILL.md
+│   ├── crossref-lookup.skill
 │   ├── crossref-lookup-CHANGELOG.md
-│   ├── scripts/
-│   │   ├── citation_lookup.py
-│   │   ├── doi_lookup.py
-│   │   ├── search_works.py
-│   │   ├── search_by_author.py
-│   │   ├── generate_apa7_citation.py
-│   │   ├── generate_bibtex.py
-│   │   └── journal_lookup.py
-│   └── references/
-│       ├── api_reference.md
-│       ├── response_schemas.md
-│       ├── citation_formats.md
-│       └── filters_guide.md
 │
 └── openlibrary-lookup/
     ├── openlibrary-lookup-README.md
-    ├── SKILL.md
+    ├── openlibrary-lookup.skill
     ├── openlibrary-lookup-CHANGELOG.md
-    ├── scripts/
-    │   ├── book_lookup.py
-    │   ├── search_books.py
-    │   ├── isbn_lookup.py
-    │   ├── get_author_info.py
-    │   ├── generate_apa7_citation.py
-    │   └── generate_bibtex.py
-    └── references/
-        ├── api_reference.md
-        ├── response_schemas.md
-        └── citation_formats.md
 ```
 
 ## 🔧 Requirements
