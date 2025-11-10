@@ -376,14 +376,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] AI-powered recommendations
 
 ### Community Requests
-See our [GitHub Issues](https://github.com/yourusername/claude-skills-collection/issues) for community-requested features.
+See our [GitHub Issues](issues) for community-requested features.
 
 ## 📈 Version History
 
 See individual CHANGELOG.md files for detailed version history:
-- [Taxonomy SVG Changelog](./taxonomy-svg/CHANGELOG.md)
-- [Crossref Lookup Changelog](./crossref-lookup/CHANGELOG.md)
-- [OpenLibrary Lookup Changelog](./openlibrary-lookup/CHANGELOG.md)
+- [Taxonomy SVG Changelog](./taxonomy-svg-CHANGELOG.md)
+- [Crossref Lookup Changelog](./crossref-lookup-CHANGELOG.md)
+- [OpenLibrary Lookup Changelog](./openlibrary-lookup-CHANGELOG.md)
 
 ---
 
@@ -404,4 +404,8 @@ If you find these skills useful:
 *Empowering academic work through better tools*
 
 ### Quick Links
-[Taxonomy SVG](./taxonomy-svg) • [Crossref Lookup](./crossref-lookup) • [OpenLibrary Lookup](./openlibrary-lookup) • [Issues](https://github.com/yourusername/claude-skills-collection/issues) • [Contribute](#contributing)
+• [Taxonomy SVG](./taxonomy-svg.skill)
+• [Crossref Lookup](./crossref-lookup.skill)
+• [OpenLibrary Lookup](./openlibrary-lookup.skill)
+• [Issues](https://github.com/yourusername/claude-skills-collection/issues)
+• [Contribute](#contributing)
