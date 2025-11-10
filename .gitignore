@@ -3,6 +3,7 @@
 *.log
 *.sql
 *.sqlite
+*.zip
 
 # OS generated files #
 ######################
