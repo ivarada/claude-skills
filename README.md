@@ -376,7 +376,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] AI-powered recommendations
 
 ### Community Requests
-See our [GitHub Issues](issues) for community-requested features.
+See our [GitHub Issues](./issues) for community-requested features.
 
 ## 📈 Version History
 
