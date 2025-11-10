@@ -54,7 +54,7 @@ These skills are designed to work with Claude AI's skills system:
 
 Each skill has its own comprehensive documentation:
 
-- **[Taxonomy SVG README](https://github.com/ivarada/claude-skills/blob/main/taxonomy-svg/README.md)** - Complete guide to creating visual taxonomies
+- **[Taxonomy SVG README](https://github.com/ivarada/claude-skills/blob/main/taxonomy-svg/taxonomy-svg-README.md)** - Complete guide to creating visual taxonomies
 - **[Crossref Lookup README](https://github.com/ivarada/claude-skills/blob/main/crossref-lookup/crossref-lookup-README.md)** - Academic citation tools documentation
 - **[OpenLibrary Lookup README](https://github.com/ivarada/claude-skills/blob/main/openlibrary-lookup/openlibrary-lookup-README.md)** - Book citation tools guide
 
@@ -322,8 +322,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 See individual CHANGELOG.md files for detailed version history:
 - [Taxonomy SVG Changelog](./taxonomy-svg/taxonomy-svg-CHANGELOG.md)
-- [Crossref Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/crossref-lookup-CHANGELOG.md)
-- [OpenLibrary Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/openlibrary-lookup-CHANGELOG.md)
+- [Crossref Lookup Changelog](./crossref-lookup/crossref-lookup-CHANGELOG.md)
+- [OpenLibrary Lookup Changelog](./openlibrary-lookup/openlibrary-lookup-CHANGELOG.md)
 
 ---
 
