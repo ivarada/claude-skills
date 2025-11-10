@@ -2,7 +2,6 @@
 
 A curated collection of three powerful Claude AI skills for academic research, visualization, and citation management. These tools help researchers, students, and educators work more efficiently with [...]
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.6+-green)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 ![Skills](https://img.shields.io/badge/skills-3-orange)
