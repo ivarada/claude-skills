@@ -275,13 +275,12 @@ We welcome contributions! Here's how you can help:
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/ivarada/claude-skills/blob/main/LICENSE) file for details.
 
 ### What This Means
-
-✅ Commercial use allowed
-✅ Modification allowed
-✅ Distribution allowed
-✅ Private use allowed
-❌ No liability
-❌ No warranty
+- ✅ Commercial use allowed
+- ✅ Modification allowed
+- ✅ Distribution allowed
+- ✅ Private use allowed
+- ❌ No liability
+- ❌ No warranty
 
 ## 🙏 Acknowledgments
 
@@ -344,7 +343,7 @@ If you find these skills useful:
 *Empowering academic work through better tools*
 
 ### Quick Links
-• [Taxonomy SVG](https://github.com/ivarada/claude-skills/tree/main/taxonomy-svg)
-• [Crossref Lookup](https://github.com/ivarada/claude-skills/tree/main/crossref-lookup)
-• [OpenLibrary Lookup](https://github.com/ivarada/claude-skills/tree/main/openlibrary-lookup)
-• [Issues](https://github.com/ivarada/claude-skills/issues)
+- [Taxonomy SVG](https://github.com/ivarada/claude-skills/tree/main/taxonomy-svg)
+- [Crossref Lookup](https://github.com/ivarada/claude-skills/tree/main/crossref-lookup
+- [OpenLibrary Lookup](https://github.com/ivarada/claude-skills/tree/main/openlibrary-lookup)
+- [Issues](https://github.com/ivarada/claude-skills/issues)
