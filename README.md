@@ -407,5 +407,5 @@ If you find these skills useful:
 • [Taxonomy SVG](./taxonomy-svg.skill)
 • [Crossref Lookup](./crossref-lookup.skill)
 • [OpenLibrary Lookup](./openlibrary-lookup.skill)
-• [Issues](/ivarada/claude-skills/issues)
+• [Issues](./issues)
 • [Contribute](#contributing)
