@@ -344,6 +344,6 @@ If you find these skills useful:
 
 ### Quick Links
 - [Taxonomy SVG](https://github.com/ivarada/claude-skills/tree/main/taxonomy-svg)
-- [Crossref Lookup](https://github.com/ivarada/claude-skills/tree/main/crossref-lookup
+- [Crossref Lookup](https://github.com/ivarada/claude-skills/tree/main/crossref-lookup)
 - [OpenLibrary Lookup](https://github.com/ivarada/claude-skills/tree/main/openlibrary-lookup)
 - [Issues](https://github.com/ivarada/claude-skills/issues)
