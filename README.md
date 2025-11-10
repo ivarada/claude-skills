@@ -1,6 +1,6 @@
 # Claude Skills Collection
 
-A curated collection of three powerful Claude AI skills for academic research, visualization, and citation management. These tools help researchers, students, and educators work more efficiently with academic content.
+A curated collection of three powerful Claude AI skills for academic research, visualization, and citation management. These tools help researchers, students, and educators work more efficiently with [...]
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.6+-green)
@@ -11,17 +11,17 @@ A curated collection of three powerful Claude AI skills for academic research, v
 
 This repository contains three production-ready Claude skills:
 
-### 📊 [Taxonomy SVG Generator](./taxonomy-svg)
+### 📊 [Taxonomy SVG Generator](https://github.com/ivarada/claude-skills/tree/main/taxonomy-svg)
 Convert structured markdown hierarchies into beautiful SVG taxonomy diagrams with nested cards, color-coded categories, and professional arrow routing.
 
 **Perfect for:** Academic frameworks, research taxonomies, conceptual models, knowledge classification
 
-### 📚 [Crossref Lookup](./crossref-lookup)
+### 📚 [Crossref Lookup](https://github.com/ivarada/claude-skills/tree/main/crossref-lookup)
 Academic publication metadata retrieval and citation generation using the Crossref REST API. Look up DOIs, search papers, and generate citations instantly.
 
 **Perfect for:** Literature reviews, bibliography generation, research validation, citation management
 
-### 📖 [OpenLibrary Lookup](./openlibrary-lookup)
+### 📖 [OpenLibrary Lookup](https://github.com/ivarada/claude-skills/tree/main/openlibrary-lookup)
 Book lookup, search, and citation generation using the OpenLibrary API. Search books, look up ISBNs, and create formatted citations.
 
 **Perfect for:** Book citations, reading lists, library cataloging, bibliography creation
@@ -33,8 +33,8 @@ Book lookup, search, and citation generation using the OpenLibrary API. Search b
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/claude-skills-collection.git
-cd claude-skills-collection
+git clone https://github.com/ivarada/claude-skills.git
+cd claude-skills
 ```
 
 Install Python dependencies:
@@ -55,9 +55,9 @@ These skills are designed to work with Claude AI's skills system:
 
 Each skill has its own comprehensive documentation:
 
-- **[Taxonomy SVG README](./taxonomy-svg/README.md)** - Complete guide to creating visual taxonomies
-- **[Crossref Lookup README](./crossref-lookup/README.md)** - Academic citation tools documentation
-- **[OpenLibrary Lookup README](./openlibrary-lookup/README.md)** - Book citation tools guide
+- **[Taxonomy SVG README](https://github.com/ivarada/claude-skills/blob/main/taxonomy-svg/README.md)** - Complete guide to creating visual taxonomies
+- **[Crossref Lookup README](https://github.com/ivarada/claude-skills/blob/main/crossref-lookup/crossref-lookup-README.md)** - Academic citation tools documentation
+- **[OpenLibrary Lookup README](https://github.com/ivarada/claude-skills/blob/main/openlibrary-lookup/openlibrary-lookup-README.md)** - Book citation tools guide
 
 ## 🎨 Use Cases
 
@@ -111,21 +111,21 @@ python scripts/search_works.py "educational psychology" --rows 20
 ## 📦 Repository Structure
 
 ```
-claude-skills-collection/
-├── README.md                    # This file
-├── LICENSE                      # MIT License
+claude-skills/
+├── README.md
+├── LICENSE
 │
-├── taxonomy-svg/               # Visual taxonomy generator
+├── taxonomy-svg/
 │   ├── README.md
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   └── scripts/
 │       └── generate_svg.py
 │
-├── crossref-lookup/            # Academic citation tools
-│   ├── README.md
+├── crossref-lookup/
+│   ├── crossref-lookup-README.md
 │   ├── SKILL.md
-│   ├── CHANGELOG.md
+│   ├── crossref-lookup-CHANGELOG.md
 │   ├── scripts/
 │   │   ├── citation_lookup.py
 │   │   ├── doi_lookup.py
@@ -140,10 +140,10 @@ claude-skills-collection/
 │       ├── citation_formats.md
 │       └── filters_guide.md
 │
-└── openlibrary-lookup/         # Book citation tools
-    ├── README.md
+└── openlibrary-lookup/
+    ├── openlibrary-lookup-README.md
     ├── SKILL.md
-    ├── CHANGELOG.md
+    ├── openlibrary-lookup-CHANGELOG.md
     ├── scripts/
     │   ├── book_lookup.py
     │   ├── search_books.py
@@ -207,6 +207,7 @@ pip install requests --break-system-packages
 
 4. **Create Bibliography** (OpenLibrary Lookup)
    ```bash
+   cd ../openlibrary-lookup
    python scripts/book_lookup.py bib.isbn == 9780140328721
    ```
 
@@ -215,22 +216,6 @@ pip install requests --break-system-packages
    cd ../taxonomy-svg
    python scripts/generate_svg.py my-research-framework.md
    ```
-
-### Literature Review Workflow
-
-1. Search papers by topic
-2. Filter by date and relevance
-3. Generate citations for selected papers
-4. Create conceptual taxonomy of findings
-5. Export complete bibliography
-
-### Teaching Material Workflow
-
-1. Create course taxonomy diagram
-2. Build reading list with citations
-3. Find supplementary papers
-4. Organize all references
-5. Generate student handouts
 
 ## 🐛 Troubleshooting
 
@@ -262,7 +247,7 @@ pip install requests --break-system-packages
 1. Check individual skill README files
 2. Review SKILL.md technical documentation
 3. See CHANGELOG.md for known issues
-4. Open an issue on GitHub
+4. Open an issue on GitHub: https://github.com/ivarada/claude-skills/issues
 
 ## 🤝 Contributing
 
@@ -270,9 +255,9 @@ We welcome contributions! Here's how you can help:
 
 ### Ways to Contribute
 
-1. **Bug Reports**: Found an issue? Open a GitHub issue
-2. **Feature Requests**: Have an idea? Start a discussion
-3. **Code Contributions**: Submit a pull request
+1. **Bug Reports**: Found an issue? Open a GitHub issue: https://github.com/ivarada/claude-skills/issues
+2. **Feature Requests**: Have an idea? Start a discussion via the Issues page
+3. **Code Contributions**: Submit a pull request against this repository
 4. **Documentation**: Improve guides and examples
 5. **Examples**: Share your use cases and workflows
 
@@ -284,19 +269,11 @@ We welcome contributions! Here's how you can help:
 4. Test thoroughly
 5. Commit with clear messages (`git commit -m 'Add YourFeature'`)
 6. Push to your branch (`git push origin feature/YourFeature`)
-7. Open a Pull Request
-
-### Development Guidelines
-
-- Follow existing code style
-- Add tests for new features
-- Update documentation
-- Include examples
-- Test with Claude AI when applicable
+7. Open a Pull Request against https://github.com/ivarada/claude-skills
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ivarada/claude-skills/blob/main/LICENSE) file for details.
 
 ### What This Means
 
@@ -323,13 +300,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Support
 
 ### Getting Help
-- **Documentation**: Check individual skill READMEs
-- **Issues**: [GitHub Issues](https://github.com/yourusername/claude-skills-collection/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/claude-skills-collection/discussions)
+- **Documentation**: Check individual skill READMEs in this repo
+- **Issues**: https://github.com/ivarada/claude-skills/issues
 
 ### Contact
-- **Email**: your-email@example.com
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **GitHub**: https://github.com/ivarada
 
 ## 🔗 Related Resources
 
@@ -344,46 +319,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Visualization libraries
 - Bibliography generators
 
-## 📊 Statistics
-
-- **3** Production-ready skills
-- **13** Python scripts
-- **7** Reference guides
-- **100+** Combined features
-- **0** External dependencies (Taxonomy SVG)
-- **Free** API access (Crossref & OpenLibrary)
-
-## 🗺️ Roadmap
-
-### Planned Features
-
-**v1.1.0** (Q1 2025)
-- [ ] Additional citation formats (MLA, Chicago)
-- [ ] Batch processing utilities
-- [ ] Web interface for all skills
-- [ ] Export to reference managers
-
-**v1.2.0** (Q2 2025)
-- [ ] Enhanced search filters
-- [ ] Multi-language support
-- [ ] Integration with other academic APIs
-- [ ] Automated testing suite
-
-**v2.0.0** (Future)
-- [ ] GUI applications
-- [ ] Cloud deployment options
-- [ ] Mobile companion apps
-- [ ] AI-powered recommendations
-
-### Community Requests
-See our [GitHub Issues](./issues) for community-requested features.
-
 ## 📈 Version History
 
 See individual CHANGELOG.md files for detailed version history:
-- [Taxonomy SVG Changelog](./taxonomy-svg-CHANGELOG.md)
-- [Crossref Lookup Changelog](./crossref-lookup-CHANGELOG.md)
-- [OpenLibrary Lookup Changelog](./openlibrary-lookup-CHANGELOG.md)
+- [Taxonomy SVG Changelog](https://github.com/ivarada/claude-skills/blob/main/taxonomy-svg-CHANGELOG.md)
+- [Crossref Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/crossref-lookup-CHANGELOG.md)
+- [OpenLibrary Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/openlibrary-lookup-CHANGELOG.md)
 
 ---
 
@@ -391,7 +332,7 @@ See individual CHANGELOG.md files for detailed version history:
 
 If you find these skills useful:
 
-1. **Star this repository** ⭐
+1. **Star this repository** ⭐: https://github.com/ivarada/claude-skills
 2. **Share with colleagues** 📢
 3. **Contribute improvements** 🔧
 4. **Cite in your research** 📚
@@ -404,8 +345,7 @@ If you find these skills useful:
 *Empowering academic work through better tools*
 
 ### Quick Links
-• [Taxonomy SVG](./taxonomy-svg.skill)
-• [Crossref Lookup](./crossref-lookup.skill)
-• [OpenLibrary Lookup](./openlibrary-lookup.skill)
-• [Issues](https://github.com/ivarada/claude-skills/issues)
-• [Contribute](#contributing)
+• Taxonomy SVG: https://github.com/ivarada/claude-skills/tree/main/taxonomy-svg
+• Crossref Lookup: https://github.com/ivarada/claude-skills/tree/main/crossref-lookup
+• OpenLibrary Lookup: https://github.com/ivarada/claude-skills/tree/main/openlibrary-lookup
+• Issues: https://github.com/ivarada/claude-skills/issues
