@@ -321,7 +321,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## 📈 Version History
 
 See individual CHANGELOG.md files for detailed version history:
-- [Taxonomy SVG Changelog](https://github.com/ivarada/claude-skills/blob/main/taxonomy-svg-CHANGELOG.md)
+- [Taxonomy SVG Changelog](./taxonomy-svg/taxonomy-svg-CHANGELOG.md)
 - [Crossref Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/crossref-lookup-CHANGELOG.md)
 - [OpenLibrary Lookup Changelog](https://github.com/ivarada/claude-skills/blob/main/openlibrary-lookup-CHANGELOG.md)
 
