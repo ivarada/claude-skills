@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-generate_svg_4level.py - Enhanced taxonomy generator with 4-level hierarchy
+generate_svg.py - Enhanced taxonomy generator with 4-level hierarchy
+Version 2.2 - Revised Typography and Spacing
 
 Supports nested card structure:
 # Title
@@ -8,6 +9,16 @@ Supports nested card structure:
 ### Category (colored box)
 #### Subcategory (card inside category)
 ##### Item (bullet in card)
+
+Changelog v2.2:
+- Increased category description font: 12px → 16px
+- Increased card title font: 13px → 14px
+- Increased card item font: 11px → 12px
+- Increased footer font: 10px → 16px
+- Adjusted category description position: y=50 → y=60
+- Improved card item spacing: first dy=0→10, subsequent dy=17→25
+- Updated canvas width attribute: 2000 → 2500 (viewBox stays 2000)
+- Fixed footer text: "kind" → "middle"
 """
 
 import sys
@@ -16,7 +27,7 @@ from pathlib import Path
 from datetime import datetime
 
 if len(sys.argv) < 2:
-    print("Usage: python generate_svg_4level.py outline.md")
+    print("Usage: python generate_svg.py outline.md")
     sys.exit(1)
 
 infile = Path(sys.argv[1])
@@ -27,7 +38,8 @@ if not infile.exists():
 text = infile.read_text(encoding="utf-8").splitlines()
 
 # Layout constants
-CANVAS_W = 2000
+CANVAS_W_VIEWBOX = 2000    # Internal coordinate system
+CANVAS_W_DISPLAY = 2500    # Display width (wider for better viewing)
 START_X = 100
 TOP_ROW_Y = 280
 DEFAULT_CATEGORY_HEIGHT = 320  # Increased for nested cards
@@ -38,6 +50,17 @@ CARD_PAD = 20
 ROW_GAP = 60
 CARD_VERTICAL_OFFSET = 90
 CATEGORIES_PER_ROW = 3
+
+# Typography constants (v2.2 revised)
+CAT_DESC_SIZE = 16         # was 12
+CARD_TITLE_SIZE = 14       # was 13
+CARD_ITEM_SIZE = 12        # was 11
+FOOTER_SIZE = 16           # was 10
+
+# Spacing constants (v2.2 revised)
+CAT_DESC_Y_OFFSET = 60     # was 50
+CARD_ITEM_FIRST_DY = 10    # was 0
+CARD_ITEM_DY = 25          # was 17
 
 # Parse markdown - 4 level structure
 title = "Diagram"
@@ -141,7 +164,7 @@ for row_num in sorted(rows.keys()):
     
     # Total width of this row
     total_w = sum(c["width"] for c in row_cats) + CARD_GAP * (num_in_row - 1)
-    start_x = (CANVAS_W - total_w) / 2
+    start_x = (CANVAS_W_VIEWBOX - total_w) / 2
     
     # Position categories
     x = start_x
@@ -161,7 +184,8 @@ CANVAS_H = max_y + 100
 out = []
 
 def svg_header():
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS_W}" height="{CANVAS_H}" viewBox="0 0 {CANVAS_W} {CANVAS_H}">
+    # Note: width attribute uses DISPLAY width, viewBox uses VIEWBOX width
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS_W_DISPLAY}" height="{CANVAS_H}" viewBox="0 0 {CANVAS_W_VIEWBOX} {CANVAS_H}">
   <defs>
     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
@@ -192,9 +216,9 @@ def svg_header():
     .title {{ font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #1f2937; }}
     .main-box {{ font-family: Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #374151; }}
     .cat-title {{ font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: white; }}
-    .cat-desc {{ font-family: Arial, sans-serif; font-size: 12px; fill: white; opacity: 0.9; }}
-    .card-title {{ font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #1f2937; }}
-    .card-item {{ font-family: Arial, sans-serif; font-size: 11px; fill: #4b5563; }}
+    .cat-desc {{ font-family: Arial, sans-serif; font-size: {CAT_DESC_SIZE}px; fill: white; opacity: 0.9; }}
+    .card-title {{ font-family: Arial, sans-serif; font-size: {CARD_TITLE_SIZE}px; font-weight: bold; fill: #1f2937; }}
+    .card-item {{ font-family: Arial, sans-serif; font-size: {CARD_ITEM_SIZE}px; fill: #4b5563; }}
     .connector {{ stroke: #9ca3af; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }}
   </style>
 '''
@@ -283,9 +307,10 @@ for idx, cat in enumerate(categories):
     out.append(f'    <rect x="0" y="0" width="{cw}" height="{ch}" fill="url(#{cat_color}Grad)" rx="15" filter="url(#shadow)"/>')
     out.append(f'    <text x="{int(cw/2)}" y="30" text-anchor="middle" class="cat-title">{cat_name}</text>')
     
+    # Category description with updated y-offset
     if cat["desc"]:
         desc = cat["desc"].replace("&", "&amp;")
-        out.append(f'    <text x="{int(cw/2)}" y="50" text-anchor="middle" class="cat-desc">{desc}</text>')
+        out.append(f'    <text x="{int(cw/2)}" y="{CAT_DESC_Y_OFFSET}" text-anchor="middle" class="cat-desc">{desc}</text>')
     
     # Draw nested subcategory cards
     card_x = CARD_PAD
@@ -297,10 +322,11 @@ for idx, cat in enumerate(categories):
         subcat_title = subcat["title"].replace("&", "&amp;")
         out.append(f'      <text x="{int(CARD_W/2)}" y="20" text-anchor="middle" class="card-title">{subcat_title}</text>')
         
-        # Items
+        # Items with improved spacing
         out.append(f'      <text x="10" y="40" class="card-item">')
         for item_idx, item in enumerate(subcat['items']):
-            dy = "0" if item_idx==0 else "17"
+            # First item uses CARD_ITEM_FIRST_DY, subsequent use CARD_ITEM_DY
+            dy = CARD_ITEM_FIRST_DY if item_idx == 0 else CARD_ITEM_DY
             item_escaped = item.replace("&", "&amp;")
             out.append(f'        <tspan x="10" dy="{dy}">• {item_escaped}</tspan>')
         out.append('      </text>')
@@ -315,8 +341,8 @@ for idx, cat in enumerate(categories):
 footer_date = datetime.now().strftime('%A, %b %d, %Y')
 footer_y = CANVAS_H - 30
 out.append('  <!-- Footer -->')
-out.append(f'  <text x="1000" y="{footer_y}" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: #9ca3af;">')
-out.append(f'    {footer_date}  |  Crafted by Varada with help from intelligence (the real, artificial, and somewhere in the kind)')
+out.append(f'  <text x="1000" y="{footer_y}" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: {FOOTER_SIZE}px; fill: #9ca3af;">')
+out.append(f'    {footer_date}  |  Crafted by Varada with help from intelligence (the real, artificial, and somewhere in the middle)')
 out.append('  </text>')
 out.append('')
 
@@ -325,4 +351,7 @@ out.append('</svg>')
 svg_content = "\n".join(out)
 outfile = infile.parent / "ai-taxonomy-from-md.svg"
 outfile.write_text(svg_content, encoding="utf-8")
-print(f"Wrote {outfile.name}")
+print(f"✓ Generated {outfile.name}")
+print(f"  Canvas: {CANVAS_W_DISPLAY}×{CANVAS_H}px (viewBox: {CANVAS_W_VIEWBOX}×{CANVAS_H})")
+print(f"  Categories: {len(categories)}")
+print(f"  Typography: Cat desc={CAT_DESC_SIZE}px, Card title={CARD_TITLE_SIZE}px, Card item={CARD_ITEM_SIZE}px")

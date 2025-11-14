@@ -1,0 +1,45 @@
+# Timeline Configuration Example
+# This is a sample configuration for generating timeline SVG
+
+timeline:
+  start_year: 2020          # Start year of your timeline
+  end_year: 2026            # End year of your timeline
+  base_tick_spacing: 25     # Space between ticks (px) - recommended: 25-30
+  svg_width: 1000           # Canvas width (px) - recommended: 1000-1200
+  tick_lengths:
+    year: 100               # Year tick length (px)
+    month: 80               # Month tick length (px)
+    event: 120              # Event tick length (px)
+
+# Events list
+# Format: Date (bold) - Title (regular) - Description (italic)
+events:
+  # Full three-part event
+  - date: "2025.11.13"                        # ISO format: YYYY.MM.DD
+    title: "Nov 13th"                         # Displayed in BOLD
+    description: "We are working on a new skill"  # Displayed in REGULAR
+    notes: "Timeline project"                 # Displayed in ITALIC (optional)
+  
+  # Two-part event (no notes)
+  - date: "2025.11.20"
+    title: "Nov 20th"
+    description: "Project milestone review"
+    notes: "Q4 goals"
+  
+  # Simple event
+  - date: "2025.12.01"
+    title: "Dec 1st"
+    description: "Q4 planning session"
+  
+  # Another event
+  - date: "2026.01.15"
+    title: "Jan 15th"
+    description: "New year kickoff meeting"
+
+# Tips:
+# - Keep event titles short (10-25 characters)
+# - Use meaningful date displays (e.g., "Nov 13th", "Q4 2025")
+# - Descriptions should be concise (under 60 characters)
+# - Notes are optional - use for supplementary info
+# - Date format must be YYYY.MM.DD
+# - Events outside the year range will be ignored
